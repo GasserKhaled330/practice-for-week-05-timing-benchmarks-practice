@@ -1,29 +1,43 @@
 const [addNums, addManyNums] = require("./phase-1");
 
 function addNums10Timing(increment) {
-  // Copy your `addNums10` code here
-  // Then, add timing code
-
-  // Your code here
-
+  let startTime;
+  let endTime;
+  let result = [];
+  for (let i = increment; i <= 10 * increment; i += increment) {
+    startTime = Date.now();
+    result.push(addNums(i));
+    endTime = Date.now();
+    console.log(`${endTime - startTime}`);
+  }
+  return result;
 }
-
 
 function addManyNums10Timing(increment) {
-// Copy your `addManyNums10` code here
-// Then, add timing code
+  let startTime;
+  let endTime;
+  let result = [];
+  for (let i = increment; i <= 10 * increment; i += increment) {
+    startTime = Date.now();
+    result.push(addManyNums(i));
+    endTime = Date.now();
+    console.log(`${endTime - startTime}`);
+  }
 
-  // Your code here
-
+  return result;
 }
 
-
-n = 1000000
+n = 1000000;
 console.log(`addNums(${n}): `);
-addNums10Timing(1000000);
+console.time("addNums10Timing()");
+addNums10Timing(1000000); // big-O: O(n)
+console.timeEnd("addNums10Timing()");
 
 console.log("\n***********\n");
 
-n = 1000
+n = 5000;
+
 console.log(`addManyNums(${n}): `);
-addManyNums10Timing(5000);
+console.time("addManyNums10Timing()");
+addManyNums10Timing(5000); // big-O: O(n^2)
+console.timeEnd("addManyNums10Timing()");
