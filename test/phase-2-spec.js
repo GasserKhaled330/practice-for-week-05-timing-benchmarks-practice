@@ -1,11 +1,9 @@
-const { expect } = require('chai');
+const { expect } = require("chai");
 
 const [addNums10, addManyNums10] = require("../phase-2.js");
 
-describe ('addNums10', function () {
-
-  it('addNums in ten increments of 1', function () {
-
+describe("addNums10", function () {
+  it("addNums in ten increments of 1", function () {
     const increment = 1;
 
     const sums = addNums10(increment);
@@ -23,11 +21,9 @@ describe ('addNums10', function () {
     expect(sums[7]).to.deep.equal(36); // Sum of nums 1 through 8
     expect(sums[8]).to.deep.equal(45); // Sum of nums 1 through 9
     expect(sums[9]).to.deep.equal(55); // Sum of nums 1 through 10
-
   });
 
-  it('addNums in ten increments of 10', function () {
-
+  it("addNums in ten increments of 10", function () {
     const increment = 10;
 
     const sums = addNums10(increment);
@@ -45,17 +41,11 @@ describe ('addNums10', function () {
     expect(sums[7]).to.deep.equal(3240); // Sum of nums 1 through 80
     expect(sums[8]).to.deep.equal(4095); // Sum of nums 1 through 90
     expect(sums[9]).to.deep.equal(5050); // Sum of nums 1 through 100
-
   });
-
 });
 
-
-describe ('addManyNums10', function () {
-
-
-  it('addManyNums in ten increments of 1', function () {
-
+describe("addManyNums10", function () {
+  it("addManyNums in ten increments of 1", function () {
     const increment = 1;
 
     const sums = addManyNums10(increment);
@@ -73,11 +63,9 @@ describe ('addManyNums10', function () {
     expect(sums[7]).to.deep.equal(120); // addManyNums(8)
     expect(sums[8]).to.deep.equal(165); // addManyNums(9)
     expect(sums[9]).to.deep.equal(220); // addManyNums(10)
-
   });
 
-  it('addManyNums in ten increments of 10', function () {
-
+  it("addManyNums in ten increments of 10", function () {
     const increment = 10;
 
     const sums = addManyNums10(increment);
@@ -95,7 +83,5 @@ describe ('addManyNums10', function () {
     expect(sums[7]).to.deep.equal(88560); // addManyNums(80)
     expect(sums[8]).to.deep.equal(125580); // addManyNums(90)
     expect(sums[9]).to.deep.equal(171700); // addManyNums(100)
-
   });
-
 });
